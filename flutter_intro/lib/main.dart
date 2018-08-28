@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intro/chapter2/view/result_screen.dart';
+import 'package:flutter_intro/chapter3/ui_components_screen.dart';
 //import 'package:flutter_html_view/flutter_html_view.dart';
 
 void main() => runApp(new MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => MyHomePage(title: 'Flutter Tutorial'),
         '/result': (context) => ResultScreen(title: 'Restaurants Near By'),
+        '/ui_comp_1': (context) => UiComponentScreen(title: 'UI Components'),
       },
     );
   }
@@ -59,6 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   // Navigate to second screen when tapped!
                   Navigator.pushNamed(context, '/result');
+                }),
+
+            RaisedButton(
+                child: Text('UI Components Screen!'),
+                onPressed: () {
+                  // Navigate to second screen when tapped!
+                  Navigator.pushNamed(context, '/ui_comp_1');
                 }),
 //            new HtmlView(data: html),
           ],
