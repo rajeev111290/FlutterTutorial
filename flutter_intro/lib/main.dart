@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_intro/Chapter4/basic_functions_screen.dart';
 import 'package:flutter_intro/chapter2/view/result_screen.dart';
 import 'package:flutter_intro/chapter3/ui_components_screen.dart';
 //import 'package:flutter_html_view/flutter_html_view.dart';
 
 void main() => runApp(new MyApp());
 
-String html = '<h1>This is heading 1</h1> <h2>This is heading 2</h2><h3>This is heading 3</h3><h4>This is heading 4</h4><h5>This is heading 5</h5><h6>This is heading 6</h6><p><img alt="Test Image" src="https://i.ytimg.com/vi/RHLknisJ-Sg/maxresdefault.jpg" /></p>';
+String html =
+    '<h1>This is heading 1</h1> <h2>This is heading 2</h2><h3>This is heading 3</h3><h4>This is heading 4</h4><h5>This is heading 5</h5><h6>This is heading 6</h6><p><img alt="Test Image" src="https://i.ytimg.com/vi/RHLknisJ-Sg/maxresdefault.jpg" /></p>';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyHomePage(title: 'Flutter Tutorial'),
         '/result': (context) => ResultScreen(title: 'Restaurants Near By'),
         '/ui_comp_1': (context) => UiComponentScreen(title: 'UI Components'),
+        '/basic_functions': (context) =>
+            BasicFunctionsScreen(title: 'Basic Functions'),
       },
     );
   }
@@ -68,6 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   // Navigate to second screen when tapped!
                   Navigator.pushNamed(context, '/ui_comp_1');
+                }),
+            RaisedButton(
+                child: Text('Basic Funtions Screen!'),
+                onPressed: () {
+                  // Navigate to second screen when tapped!
+                  Navigator.pushNamed(context, '/basic_functions');
                 }),
 //            new HtmlView(data: html),
           ],
